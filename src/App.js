@@ -5,13 +5,14 @@ import Note from "./pages/Note";
 import SideNav from "./components/SideNav";
 
 function App() {
+	const [activeCategory, setActiveCategory] = useState("");
 	const [routes, setRoutes] = useState([
 		{ name: "route 1", route: "/route1" },
-		// {
-		//   name: 'route 2',
-		//   route: '/route2',
-		// },
-		// { name: 'route 3', route: '/route3' },
+		{
+			name: "route 2",
+			route: "/route2",
+		},
+		{ name: "route 3", route: "/route3" },
 		{
 			name: "route 4",
 			routes: [
@@ -41,6 +42,8 @@ function App() {
 				routes={routes}
 				allRoutes={routes}
 				setRoutes={setRoutes}
+				activeCategory={activeCategory}
+				setActiveCategory={setActiveCategory}
 			/>
 			<Note flex="3" />
 		</Flex>

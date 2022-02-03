@@ -13,7 +13,14 @@ import { AddIcon } from "@chakra-ui/icons";
 
 import { updateRoute } from "../utils/helpers";
 
-const SideNav = ({ flex = 1, routes = [], allRoutes = [], setRoutes }) => {
+const SideNav = ({
+	flex = 1,
+	routes = [],
+	allRoutes = [],
+	setRoutes,
+	activeCategory = "",
+	setActiveCategory,
+}) => {
 	return (
 		<Box minH="100vh" flex={flex}>
 			<Accordion
@@ -76,6 +83,7 @@ const SideNav = ({ flex = 1, routes = [], allRoutes = [], setRoutes }) => {
 								_hover={{
 									fontWeight: "medium",
 								}}
+								onClick={(e) => setActiveCategory(e.target.value)}
 							>
 								{name}
 							</Text>
