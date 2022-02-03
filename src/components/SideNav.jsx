@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
 	Box,
 	Accordion,
@@ -21,6 +21,10 @@ const SideNav = ({
 	activeCategory = "",
 	setActiveCategory,
 }) => {
+	useEffect(() => {
+		console.log(activeCategory);
+	}, [activeCategory]);
+
 	return (
 		<Box minH="100vh" flex={flex}>
 			<Accordion
@@ -83,7 +87,8 @@ const SideNav = ({
 								_hover={{
 									fontWeight: "medium",
 								}}
-								onClick={(e) => setActiveCategory(e.target.value)}
+								name={name}
+								onClick={() => setActiveCategory(name)}
 							>
 								{name}
 							</Text>
